@@ -1,18 +1,21 @@
 from timeit import default_timer as timer
 import array_creator as ac
 import merge_sort as msort
-import numpy as np
 import insertion_sort as isort
 
-dim_array = 10
+dim_array = 10000
+ordered = ac.create_ordered_array(dim_array)
+tipo_input = "ORDINATO"
+# rand_array = ac.create_rand_array(dim_array, -dim_array, dim_array)
+print("N ", dim_array, " valori di INPUT")
+start = timer()
+msort.MergeSort(ordered)
+#array = isort.insertion_sort(ordered)
+stop = timer()
+delta = stop - start
+print("Tempo Ins sort:", delta, "secondi. Input:", dim_array)
+nome_file = "ins_sort"+"--Ord--N="+str(dim_array)
+out = open(nome_file+".txt", "w")
+out.write("Algoritmo: INSERTION SORT.\n\nINPUT="+str(dim_array)+"\n\n"+"Tempo impiegato ad ordinare:" + str(delta)+"\n\nL'input è "+tipo_input)
 
-
-sdd = timer()
-#array = isort.insertion_sort(array)
-dds = timer()
-print("Tempo Insertion sort:", (dds - sdd), "secondi")
-
-arraio = [81, 16, 2, 1616, 69]
-print("arraio", arraio)
-msort.merge_sort(arraio, 0, len(arraio)-1)
-print(arraio)
+out.close()

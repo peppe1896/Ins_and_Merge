@@ -15,9 +15,10 @@ def merge(arr, p, q, r):
     L.append(get_sentinel(arr))
     R.append(get_sentinel(arr))
     i = j = 0
-    for k in range(p, r + 1):
+    for k in range(p, r+1):
         if L[i] <= R[j]:
             arr[k] = L[i]
+
             i += 1
         else:
             arr[k] = R[j]
@@ -30,7 +31,6 @@ def merge_sort(arr, p, r):
         merge_sort(arr, p, q)
         merge_sort(arr, q + 1, r)
         merge(arr, p, q, r)
-        print("MERGESORT", p, q, r)
         print(arr)
 
 
@@ -68,4 +68,4 @@ def merge_work(arr):  # online
 
 
 def MergeSort(A):
-    merge_sort(A, 0, len(A)-1)
+    merge_work(A)
