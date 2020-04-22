@@ -18,7 +18,6 @@ def merge(arr, p, q, r):
     for k in range(p, r+1):
         if L[i] <= R[j]:
             arr[k] = L[i]
-
             i += 1
         else:
             arr[k] = R[j]
@@ -53,7 +52,7 @@ def merge_work(arr):
                 arr[k] = R[j]
                 j += 1
             k += 1
-            print("\rMerging from "+str(k)+" to "+str(len(arr)), end="")
+            print("\rMerging from "+str(k)+" to "+str(len(arr)), end="", flush=True)
 
         while i < len(L):
             arr[k] = L[i]
