@@ -6,8 +6,8 @@ import datetime as dt
 
 ##############################################################################
 #                         SEZIONE EDITABILE
-dim_array = 1200000
-switch = 0  # Scegli l'input: 0=Casuale 1=Invertito 2=Ordinato
+dim_array = 1000
+switch = 1  # Scegli l'input: 0=Casuale 1=Invertito 2=Ordinato
 algoritmo = "MergeSort"  # Scegli l'algoritmo tra (scrivi ESATTAMENTE): InsertionSort MergeSort
 
 # IL FILE DI RISULTATO E' in : ./Test/{TIPO_INPUT}/{ALGORITMO}/ e il file si chiama In={numInput}#

@@ -1,6 +1,10 @@
-1.2182096209944575
+1.3266191040020203
 
 Algoritmo: MergeSort
 Dimensione Input: 50000
-Tempo impiegato ad ordinare: 1.2182096209944575
+Tempo impiegato ad ordinare: 1.3266191040020203
 Input: Ordinato
+Data 23/4/2020
+
+Inizio:: 0:39:57
+Fine:: 0:39:58

@@ -1,6 +1,10 @@
-0.03249750900067738
+0.03653162800037535
 
 Algoritmo: InsertionSort
-Dimensione Input:1000
-Tempo impiegato ad ordinare:0.03249750900067738
-Input:Casuale
+Dimensione Input: 1000
+Tempo impiegato ad ordinare: 0.03653162800037535
+Input: Casuale
+Data 23/4/2020
+
+Inizio:: 0:8:18
+Fine:: 0:8:18
