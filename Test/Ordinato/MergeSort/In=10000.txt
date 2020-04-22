@@ -1,0 +1,6 @@
+0.21449280499655288
+
+Algoritmo: MergeSort
+Dimensione Input: 10000
+Tempo impiegato ad ordinare: 0.21449280499655288
+Input: Ordinato

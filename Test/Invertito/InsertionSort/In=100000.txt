@@ -1,0 +1,6 @@
+649.5106587920018
+
+Algoritmo: InsertionSort
+Dimensione Input:100000
+Tempo impiegato ad ordinare:649.5106587920018
+Input:Invertito

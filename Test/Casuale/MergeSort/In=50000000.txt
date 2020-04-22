@@ -1,0 +1,10 @@
+3839.0789833430026
+
+Algoritmo: MergeSort
+Dimensione Input: 50000000
+Tempo impiegato ad ordinare: 3839.0789833430026
+Input: Casuale
+Data 22/4/2020
+
+Inizio:: 15:4:33
+Fine:: 16:8:32

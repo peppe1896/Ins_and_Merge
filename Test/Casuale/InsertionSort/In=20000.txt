@@ -1,0 +1,6 @@
+13.341932679002639
+
+Algoritmo: InsertionSort
+Dimensione Input: 20000
+Tempo impiegato ad ordinare: 13.341932679002639
+Input: Casuale
