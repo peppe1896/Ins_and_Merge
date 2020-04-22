@@ -34,18 +34,17 @@ def merge_sort(arr, p, r):
         print(arr)
 
 
-def merge_work(arr):  # online
+def merge_work(arr):
     if len(arr) > 1:
-        mid = len(arr) // 2  # Finding the mid of the array
-        L = arr[:mid]  # Dividing the array elements
-        R = arr[mid:]  # into 2 halves
+        mid = len(arr) // 2
+        L = arr[:mid]
+        R = arr[mid:]
 
-        merge_work(L)  # Sorting the first half
-        merge_work(R)  # Sorting the second half
+        merge_work(L)
+        merge_work(R)
 
         i = j = k = 0
 
-        # Copy data to temp arrays L[] and R[]
         while i < len(L) and j < len(R):
             if L[i] < R[j]:
                 arr[k] = L[i]
@@ -54,8 +53,8 @@ def merge_work(arr):  # online
                 arr[k] = R[j]
                 j += 1
             k += 1
+            print("\rMerging from "+str(k)+" to "+str(len(arr)), end="")
 
-        # Checking if any element was left
         while i < len(L):
             arr[k] = L[i]
             i += 1
