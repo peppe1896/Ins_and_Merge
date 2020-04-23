@@ -28,6 +28,24 @@ def setup(is_simulation=False, switch=0, algoritmo="MergeSort", dim_array=10, fu
                     algoritmo2 = "MergeSort"
                     plot_mode(0, algoritmo, full)
                     plot_mode(0, algoritmo2, full, name=str(algoritmo)+"<->"+str(algoritmo2))
+            elif switch == 5:
+                if algoritmo == "MergeSort":
+                    algoritmo2 = "InsertionSort"
+                    plot_mode(1, algoritmo, full)
+                    plot_mode(1, algoritmo2, full, name=str(algoritmo) + "<->" + str(algoritmo2))
+                elif algoritmo == "InsertionSort":
+                    algoritmo2 = "MergeSort"
+                    plot_mode(1, algoritmo, full)
+                    plot_mode(1, algoritmo2, full, name=str(algoritmo)+"<->"+str(algoritmo2))
+            elif switch == 6:
+                if algoritmo == "MergeSort":
+                    algoritmo2 = "InsertionSort"
+                    plot_mode(2, algoritmo, full)
+                    plot_mode(2, algoritmo2, full, name=str(algoritmo) + "<->" + str(algoritmo2))
+                elif algoritmo == "InsertionSort":
+                    algoritmo2 = "MergeSort"
+                    plot_mode(2, algoritmo, full)
+                    plot_mode(2, algoritmo2, full, name=str(algoritmo)+"<->"+str(algoritmo2))
             else:
                 plot_mode(switch, algoritmo, full)
             plt.print_plot()
