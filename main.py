@@ -3,13 +3,20 @@ import array_creator as ac
 import merge_sort as msort
 import insertion_sort as isort
 import datetime as dt
+import plott as plt
+
 
 ##############################################################################
 #                         SEZIONE EDITABILE
-dim_array = 1000
-switch = 1  # Scegli l'input: 0=Casuale 1=Invertito 2=Ordinato
-algoritmo = "MergeSort"  # Scegli l'algoritmo tra (scrivi ESATTAMENTE): InsertionSort MergeSort
-
+sim_mode = False
+switch = 0
+dim_array = 1
+algoritmo = "MergeSort"
+if sim_mode:
+    dim_array = 1000
+    switch = 0  # Scegli l'input: 0=Casuale 1=Invertito 2=Ordinato
+    algoritmo = "MergeSort"  # Scegli l'algoritmo tra (scrivi ESATTAMENTE): InsertionSort MergeSort
+    # plotta tutto
 # IL FILE DI RISULTATO E' in : ./Test/{TIPO_INPUT}/{ALGORITMO}/ e il file si chiama In={numInput}#
 ##############################################################################
 
@@ -62,3 +69,8 @@ out.write("Data " + str(orario_inizio.day) + "/" + str(orario_inizio.month) + "/
 out.write("\n\n"+str(str_start))
 out.write("\n"+str(str_end))
 out.close()
+
+if not sim_mode:
+    print("work for plot")
+    list_input = [1000, 10000, 20000, 50000, 60000, 100000, 120000]
+    plt.draw_graphic(list_input, tipo_input, algoritmo)
