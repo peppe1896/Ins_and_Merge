@@ -6,6 +6,24 @@ import datetime as dt
 import plott as plt
 
 
+def setup(is_simulation=True, switch=0, algoritmo="MergeSort", dim_array=10):
+    if is_simulation:
+        simulate_n_save(dim_array, switch, algoritmo)
+    else:
+        plot_mode(switch, algoritmo)
+
+
+def check_correctness(array):
+    i = 0
+    j = 1
+    while i < len(array)-1:
+        if array[j] < array[i]:
+            return False
+        i += 1
+        j += 1
+    return True
+
+
 def simulate_n_save(dim_array=10, switch=0, algorithm="MergeSort"):
     ####################
     # Parte I : SIMULA #
@@ -52,9 +70,13 @@ def simulate_n_save(dim_array=10, switch=0, algorithm="MergeSort"):
     delta = stop - start
     print("\nTempo " + algoritmo + " :", delta, "secondi. Input:", dim_array)
     h_fine = dt.datetime.now()
-    str_end = "Fine:: "+ str(h_fine.hour) + ":" + str(h_fine.minute) + ":" + str(h_fine.second)
+    str_end = "Fine:: " + str(h_fine.hour) + ":" + str(h_fine.minute) + ":" + str(h_fine.second)
     print(str_end)
-
+    print("Verifico che il vettore sia ordinato...", end=" ")
+    if check_correctness(array):
+        print("Array ORDINATO!")
+    else:
+        print("Qualcosa è andato storto!")
     ############################
     # Parte II : SALVA SU FILE #
     ############################
