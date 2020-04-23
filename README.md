@@ -2,9 +2,10 @@
 Questo Homework mostra quanto tempo è richiesto per eseguire un ordinamento in base a varie condizioni di input, 
 sfruttando l'algoritmo **_Merge Sort_** e l'algoritmo **_InsertionSort_**. 
 Sono salvati, nella cartella plot, gli andamenti dei vari casi visitati in una immagine formato png.
+        
+    Per usare il programma bisogna avviarlo da super_main.py, nel quale ci sono 3 flag da poter modificare:
 
-Per usare il programma:
-Si avvia da **super_main.py**. Ci sono 3 impostazioni editabili, e cioè:
+
 - **`SimulationMode`**: Se true, gli altri input verranno usati nella simulazione
 - **`Switch`**: un intero da 0 a 6:
     - `0`: Ordinamento Casuale
