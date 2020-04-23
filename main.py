@@ -6,71 +6,90 @@ import datetime as dt
 import plott as plt
 
 
-##############################################################################
-#                         SEZIONE EDITABILE
-sim_mode = False
-switch = 0
-dim_array = 1
-algoritmo = "MergeSort"
-if sim_mode:
-    dim_array = 1000
-    switch = 0  # Scegli l'input: 0=Casuale 1=Invertito 2=Ordinato
-    algoritmo = "MergeSort"  # Scegli l'algoritmo tra (scrivi ESATTAMENTE): InsertionSort MergeSort
-    # plotta tutto
-# IL FILE DI RISULTATO E' in : ./Test/{TIPO_INPUT}/{ALGORITMO}/ e il file si chiama In={numInput}#
-##############################################################################
+def simulate_n_save(dim_array=10, switch=0, algorithm="MergeSort"):
+    ####################
+    # Parte I : SIMULA #
+    ####################
 
-tipo_input = ""
-array = []
-if switch == 0:
-    print("Uso input CASUALE::", end=" ")
-    tipo_input = "Casuale"  # Casuale Invertito Ordinato
-    array = ac.create_rand_array(dim_array)
-elif switch == 1:
-    print("Uso input INVERTITO::", end=" ")
-    tipo_input = "Invertito"
-    array = ac.create_inverted_array(dim_array)
-elif switch == 2:
-    print("Uso input ORDINATO::", end=" ")
-    tipo_input = "Ordinato"
-    array = ac.create_ordered_array(dim_array)
-else:
-    print("DEFAULT INPUT TYPE: Random", end=" ")
-    tipo_input = "Casuale"
-    array = ac.create_rand_array(dim_array)
+    # Imposta algoritmo da usare
+    algoritmo = algorithm
 
-# NON TOCCARE
-print("N", dim_array, "valori di INPUT")
-orario_inizio = dt.datetime.now()
-str_start = "Inizio:: " + str(orario_inizio.hour) + ":" + str(orario_inizio.minute) + ":" + str(orario_inizio.second)
-print(str_start)
-start = timer()
-if algoritmo == "InsertionSort":
-    print("Uso InsertionSort::", end=" ")
-    array = isort.insertion_sort(array)
-elif algoritmo == "MergeSort":
-    print("Uso MergeSort::", end=" ")
-    msort.MergeSort(array)
-else:
-    print("DEFAULT CASE: MergeSort -- ARRAY: RANDOM", end=" ")
-    msort.MergeSort(array)
-stop = timer()
-delta = stop - start
-print("\nTempo " + algoritmo + " :", delta, "secondi. Input:", dim_array)
-orario_fine = dt.datetime.now()
-str_end = "Fine:: "+ str(orario_fine.hour) + ":" + str(orario_fine.minute) + ":" + str(orario_fine.second)
-print(str_end)
-nome_file = "In=" + str(dim_array)
-out = open("./Test/" + tipo_input + "/" + algoritmo + "/" + nome_file + ".txt", "w")
-out.write(str(delta) + "\n\nAlgoritmo: " + algoritmo + "\nDimensione Input: " + str(
-    dim_array) + "\nTempo impiegato ad ordinare: " +
-          str(delta) + "\nInput: " + tipo_input + "\n")
-out.write("Data " + str(orario_inizio.day) + "/" + str(orario_inizio.month) + "/" + str(orario_inizio.year))
-out.write("\n\n"+str(str_start))
-out.write("\n"+str(str_end))
-out.close()
+    # Crea il vettore da ordinare usando dim e tipo di array
+    if switch == 0:
+        print("Uso input CASUALE::", end=" ")
+        tipo_input = "Casuale"  # Casuale Invertito Ordinato
+        array = ac.create_rand_array(dim_array)
+    elif switch == 1:
+        print("Uso input INVERTITO::", end=" ")
+        tipo_input = "Invertito"
+        array = ac.create_inverted_array(dim_array)
+    elif switch == 2:
+        print("Uso input ORDINATO::", end=" ")
+        tipo_input = "Ordinato"
+        array = ac.create_ordered_array(dim_array)
+    else:
+        print("DEFAULT INPUT TYPE: Random", end=" ")
+        tipo_input = "Casuale"
+        array = ac.create_rand_array(dim_array)
 
-if not sim_mode:
-    print("work for plot")
-    list_input = [1000, 10000, 20000, 50000, 60000, 100000, 120000]
-    plt.draw_graphic(list_input, tipo_input, algoritmo)
+    # Simula
+    print("N", dim_array, "valori di INPUT")
+    h_inizio = dt.datetime.now()
+    str_start = "Inizio:: " + str(h_inizio.hour) + ":" + str(h_inizio.minute) + ":" + str(h_inizio.second)
+    print("Il risultato sarà salvato in: ./Test/"+tipo_input+"/"+algoritmo+"/ e il file si chiama In="+str(dim_array))
+    print(str_start)
+    start = timer()
+    if algoritmo == "InsertionSort":
+        print("Uso InsertionSort::", end=" ")
+        array = isort.insertion_sort(array)
+    elif algoritmo == "MergeSort":
+        print("Uso MergeSort::", end=" ")
+        msort.MergeSort(array)
+    else:
+        print("DEFAULT CASE: MergeSort -- ARRAY: RANDOM", end=" ")
+        msort.MergeSort(array)
+    stop = timer()
+    delta = stop - start
+    print("\nTempo " + algoritmo + " :", delta, "secondi. Input:", dim_array)
+    h_fine = dt.datetime.now()
+    str_end = "Fine:: "+ str(h_fine.hour) + ":" + str(h_fine.minute) + ":" + str(h_fine.second)
+    print(str_end)
+
+    ############################
+    # Parte II : SALVA SU FILE #
+    ############################
+
+    nome_file = "In=" + str(dim_array)
+    out = open("./Test/" + tipo_input + "/" + algoritmo + "/" + nome_file + ".txt", "w")
+    out.write(str(delta) + "\n\nAlgoritmo: " + algoritmo + "\nDimensione Input: " + str(
+        dim_array) + "\nTempo impiegato ad ordinare: " +
+              str(delta) + "\nInput: " + tipo_input + "\n")
+    out.write("Data " + str(h_inizio.day) + "/" + str(h_inizio.month) + "/" + str(h_inizio.year))
+    out.write("\n\n"+str(str_start))
+    out.write("\n"+str(str_end))
+    out.close()
+
+
+def plot_mode(tipo_input, algoritmo):
+
+    if tipo_input == 0:
+        print("Uso input CASUALE::")
+        tipo_input = "Casuale"
+    elif tipo_input == 1:
+        print("Uso input INVERTITO::")
+        tipo_input = "Invertito"
+    elif tipo_input == 2:
+        print("Uso input ORDINATO::")
+        tipo_input = "Ordinato"
+    else:
+        print("DEFAULT INPUT TYPE: Random")
+        tipo_input = "Casuale"
+
+    print("Plotting:", str(tipo_input) + ", generato da " + str(algoritmo))
+    if algoritmo == "MergeSort":
+        lista_input = [1000, 10000, 20000, 50000, 60000, 100000, 120000, 500000,
+                       1200000, 5000000, 12000000, 25000000, 50000000]
+        plt.draw_graphic(lista_input, tipo_input, algoritmo)
+    elif algoritmo == "InsertionSort":
+        lista_input = [1000, 10000, 20000, 50000, 60000, 100000, 120000]
+        plt.draw_graphic(lista_input, tipo_input, algoritmo)
