@@ -1,12 +1,12 @@
 ## Homework 3: Insertion Sort and Merge Sort
 Questo Homework mostra quanto tempo è richiesto per eseguire un ordinamento in base a varie condizioni di input, 
-sfruttando l'algoritmo **_Merge Sort_** e l'algoritmo **_InsertionSort_**. 
+sfruttando l'algoritmo **_Merge Sort_** e l'algoritmo **_Insertion Sort_**. 
 Sono salvati, nella cartella plot, gli andamenti dei vari casi visitati in una immagine formato png.
         
     Per usare il programma bisogna avviarlo da super_main.py, nel quale ci sono 3 flag da poter modificare:
 
 
-- **`SimulationMode`**: Se true, gli altri input verranno usati nella simulazione
+- **`SimulationMode`**: Se true, gli altri parametri saranno usati nella simulazione che si sta per fare
 - **`Switch`**: un intero da 0 a 6:
     - `0`: Ordinamento Casuale
     - `1`: Ordinamento Invertito
@@ -20,7 +20,7 @@ Sono salvati, nella cartella plot, gli andamenti dei vari casi visitati in una i
 
 - **`Full`** (che è un boolean) se impostato su True, inserisce nei plot anche alcuni valori in più.
 
-**Per aggiungere punti** al plot bisogna, **oltre che fare le simulazioni**, anche aggiungere dentro main.py i valori per i
+**Per aggiungere punti** al plot bisogna, **oltre che farne le simulazioni**, anche aggiungere dentro main.py i valori per i
 quali si sta simulando. Es: Se voglio aggiungere al plot il risultato della simulazione 10, nel file main.py, 
 più precisamente alla fine, dentro la funzione `plot_mode` e in **modo ordinato**, bisogna **aggiungere** anche il valore in **entrambe le liste**,
 essendo quelle le liste che vanno a essere _plottate_.
