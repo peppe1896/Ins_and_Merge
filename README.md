@@ -1,7 +1,8 @@
 ## Homework 3: Insertion Sort and Merge Sort
 Questo Homework mostra quanto tempo è richiesto per eseguire un ordinamento in base a varie condizioni di input, 
 sfruttando l'algoritmo **_Merge Sort_** e l'algoritmo **_InsertionSort_**. 
-Sono salvati, nella cartella plot, gli andamenti dei vari casi visitati in una immagine formato png.
+Sono salvati, nella cartella "_Plot_", gli andamenti dei vari casi visitati in una immagine formato png.
+Nella cartella "_Test_" sono invece salvati i risultati delle simulazioni.
         
     Per usare il programma bisogna avviarlo da super_main.py, nel quale ci sono 3 flag da poter modificare:
 

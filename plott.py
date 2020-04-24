@@ -16,27 +16,42 @@ def draw_graphic(list_input, tipo_input, algoritmo, name):
     list_y = create_data_array(list_x, tipo_input, algoritmo)
     plt.xlabel("Input (num elementi)")
     plt.ylabel("Time (s)")
-    label = "Input " + str(tipo_input)
-    if tipo_input == "Casuale":
-        color = "b"
-        mark = "^"
-        mk_face_color = "m"
-    elif tipo_input == "Invertito":
-        color = "r"
-        mark = "d"
-        mk_face_color = "c"
-    elif tipo_input == "Ordinato":
-        color = "g"
-        mark = "o"
-        mk_face_color = "y"
-    else:
-        color = "w"
-        mark = "o"
-        mk_face_color = "y"
-    plt.plot(list_x, list_y, label=label, color=color, marker=mark, markerfacecolor=mk_face_color)
-    plt.legend()
     if name == "":
         name = str(algoritmo)
+        if tipo_input == "Casuale":
+            color = "b"
+            mark = "^"
+            mk_face_color = "m"
+            label = "Input " + str(tipo_input)
+        elif tipo_input == "Invertito":
+            color = "r"
+            mark = "d"
+            mk_face_color = "c"
+            label = "Input " + str(tipo_input)
+        elif tipo_input == "Ordinato":
+            color = "g"
+            mark = "o"
+            mk_face_color = "y"
+            label = "Input " + str(tipo_input)
+        else:
+            color = "w"
+            mark = "o"
+            mk_face_color = "y"
+            label = "Input " + str(tipo_input)
+    else:
+        if algoritmo == "MergeSort":
+            color = "r"
+            mark = "d"
+            mk_face_color = "c"
+            label = str(algoritmo)
+        elif algoritmo == "InsertionSort":
+            color = "b"
+            mark = "o"
+            mk_face_color = "m"
+            label = str(algoritmo)
+
+    plt.plot(list_x, list_y, label=label, color=color, marker=mark, markerfacecolor=mk_face_color)
+    plt.legend()
     plt.title(name)
 
 
