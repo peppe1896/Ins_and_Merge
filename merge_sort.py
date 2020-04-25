@@ -9,11 +9,11 @@ def get_sentinel(array):
     return max_s + 1
 
 
-def merge(arr, p, q, r):
-    L = arr[p:q]
-    R = arr[q:r + 1]
-    L.append(get_sentinel(arr))
-    R.append(get_sentinel(arr))
+def merge(arr, p, q, r, sentinel):
+    L = arr[p:q+1]
+    R = arr[q+1:r + 1]
+    L.append(sentinel)
+    R.append(sentinel)
     i = j = 0
     for k in range(p, r+1):
         if L[i] <= R[j]:
@@ -24,46 +24,13 @@ def merge(arr, p, q, r):
             j += 1
 
 
-def merge_sort(arr, p, r):
+def merge_sort(arr, p, r, sentinel):
     if p < r:
         q = (r+p) // 2
-        merge_sort(arr, p, q)
-        merge_sort(arr, q + 1, r)
-        merge(arr, p, q, r)
-        print(arr)
-
-
-def merge_work(arr):
-    if len(arr) > 1:
-        mid = len(arr) // 2
-        L = arr[:mid]
-        R = arr[mid:]
-
-        merge_work(L)
-        merge_work(R)
-
-        i = j = k = 0
-
-        while i < len(L) and j < len(R):
-            if L[i] < R[j]:
-                arr[k] = L[i]
-                i += 1
-            else:
-                arr[k] = R[j]
-                j += 1
-            k += 1
-            print("\rMerging from "+str(k)+" to "+str(len(arr)), end="", flush=True)
-
-        while i < len(L):
-            arr[k] = L[i]
-            i += 1
-            k += 1
-
-        while j < len(R):
-            arr[k] = R[j]
-            j += 1
-            k += 1
+        merge_sort(arr, p, q, sentinel)
+        merge_sort(arr, q + 1, r, sentinel)
+        merge(arr, p, q, r, sentinel)
 
 
 def MergeSort(A):
-    merge_work(A)
+    merge_sort(A, 0, len(A)-1, get_sentinel(A))
