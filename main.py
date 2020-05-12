@@ -4,10 +4,11 @@ import merge_sort as msort
 import insertion_sort as isort
 import datetime as dt
 import plott as plt
+import quick_sort as qsort
 
 
-def setup(is_simulation=False, switch=0, algoritmo="MergeSort", dim_array=10, full=False):
-    if algoritmo == "MergeSort" or algoritmo == "InsertionSort":
+def setup(is_simulation=False, switch=0, algoritmo="MergeSort", algoritmo2="InsertionSort", dim_array=10, full=False):
+    if algoritmo == "MergeSort" or algoritmo == "InsertionSort" or algoritmo == "QuickSort":
         if is_simulation:
             if switch == 0 or switch == 1 or switch == 2:
                 simulate_n_save(dim_array, switch, algoritmo)
@@ -20,43 +21,27 @@ def setup(is_simulation=False, switch=0, algoritmo="MergeSort", dim_array=10, fu
                     plot_mode(k, algoritmo, full)
                     k += 1
             elif switch == 4:
-                if algoritmo == "MergeSort":
-                    algoritmo2 = "InsertionSort"
-                    plot_mode(0, algoritmo, full, name=str(algoritmo) + "<->" + str(algoritmo2))
-                    plot_mode(0, algoritmo2, full, name=str(algoritmo) + "<->" + str(algoritmo2))
-                elif algoritmo == "InsertionSort":
-                    algoritmo2 = "MergeSort"
-                    plot_mode(0, algoritmo, full, name=str(algoritmo) + "<->" + str(algoritmo2))
-                    plot_mode(0, algoritmo2, full, name=str(algoritmo)+"<->"+str(algoritmo2))
+                plot_mode(0, algoritmo, full, name=str(algoritmo) + "<->" + str(algoritmo2))
+                plot_mode(0, algoritmo2, full, name=str(algoritmo) + "<->" + str(algoritmo2))
             elif switch == 5:
-                if algoritmo == "MergeSort":
-                    algoritmo2 = "InsertionSort"
-                    plot_mode(1, algoritmo, full, name=str(algoritmo) + "<->" + str(algoritmo2))
-                    plot_mode(1, algoritmo2, full, name=str(algoritmo) + "<->" + str(algoritmo2))
-                elif algoritmo == "InsertionSort":
-                    algoritmo2 = "MergeSort"
-                    plot_mode(1, algoritmo, full, name=str(algoritmo) + "<->" + str(algoritmo2))
-                    plot_mode(1, algoritmo2, full, name=str(algoritmo)+"<->"+str(algoritmo2))
+                plot_mode(1, algoritmo, full, name=str(algoritmo) + "<->" + str(algoritmo2))
+                plot_mode(1, algoritmo2, full, name=str(algoritmo) + "<->" + str(algoritmo2))
             elif switch == 6:
-                if algoritmo == "MergeSort":
-                    algoritmo2 = "InsertionSort"
-                    plot_mode(2, algoritmo, full, name=str(algoritmo) + "<->" + str(algoritmo2))
-                    plot_mode(2, algoritmo2, full, name=str(algoritmo) + "<->" + str(algoritmo2))
-                elif algoritmo == "InsertionSort":
-                    algoritmo2 = "MergeSort"
-                    plot_mode(2, algoritmo, full, name=str(algoritmo) + "<->" + str(algoritmo2))
-                    plot_mode(2, algoritmo2, full, name=str(algoritmo)+"<->"+str(algoritmo2))
+                plot_mode(2, algoritmo, full, name=str(algoritmo) + "<->" + str(algoritmo2))
+                plot_mode(2, algoritmo2, full, name=str(algoritmo) + "<->" + str(algoritmo2))
             else:
                 plot_mode(switch, algoritmo, full)
             plt.print_plot()
     else:
-        print('Errore: Non esiste nessun algoritmo '+ algoritmo+'. Input possibili: "MergeSort" oppure "InsertionSort')
+        print(
+            'Errore: Non esiste nessun algoritmo ' + algoritmo + '. Input possibili: "MergeSort" | "InsertionSort" |'
+                                                                 ' "QuickSort" ')
 
 
 def check_correctness(array):
     i = 0
     j = 1
-    while i < len(array)-1:
+    while i < len(array) - 1:
         if array[j] < array[i]:
             return False
         i += 1
@@ -97,8 +82,8 @@ def simulate_n_save(dim_array=10, switch=0, algorithm="MergeSort"):
     print("N", dim_array, "valori di INPUT")
     h_inizio = dt.datetime.now()
     str_start = "Inizio:: " + str(h_inizio.hour) + ":" + str(h_inizio.minute) + ":" + str(h_inizio.second)
-    print("Il risultato sarà salvato in: ./Test/"+tipo_input+"/"+algoritmo+"/ e il file si chiama In="
-          + str(dim_array)+".txt")
+    print("Il risultato sarà salvato in: ./Test/" + tipo_input + "/" + algoritmo + "/ e il file si chiama In="
+          + str(dim_array) + ".txt")
     print(str_start)
     start = timer()
     if algoritmo == "InsertionSort":
@@ -107,6 +92,9 @@ def simulate_n_save(dim_array=10, switch=0, algorithm="MergeSort"):
     elif algoritmo == "MergeSort":
         print("Uso MergeSort::", end=" ")
         msort.MergeSort(array)
+    elif algoritmo == "QuickSort":
+        print("Uso QuickSort::", end=" ")
+        qsort.call_quicksort(array)
     else:
         print("DEFAULT CASE: MergeSort -- ARRAY: RANDOM", end=" ")
         msort.MergeSort(array)
@@ -131,13 +119,12 @@ def simulate_n_save(dim_array=10, switch=0, algorithm="MergeSort"):
         dim_array) + "\nTempo impiegato ad ordinare: " +
               str(delta) + "\nInput: " + tipo_input + "\n")
     out.write("Data " + str(h_inizio.day) + "/" + str(h_inizio.month) + "/" + str(h_inizio.year))
-    out.write("\n\n"+str(str_start))
-    out.write("\n"+str(str_end))
+    out.write("\n\n" + str(str_start))
+    out.write("\n" + str(str_end))
     out.close()
 
 
 def plot_mode(tipo_input, algoritmo, full, name=""):
-
     if tipo_input == 0:
         print("Uso input CASUALE::")
         tipo_input = "Casuale"
@@ -152,7 +139,7 @@ def plot_mode(tipo_input, algoritmo, full, name=""):
         tipo_input = "Casuale"
 
     print("Plotting:", str(tipo_input) + ", generato da " + str(algoritmo))
-    if algoritmo == "MergeSort":
+    if algoritmo == "MergeSort" or algoritmo == "QuickSort":
         if not full:
             lista_input = [1000, 10000, 20000, 35000, 50000, 60000, 80000, 100000, 120000]
         else:

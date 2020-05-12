@@ -7,7 +7,7 @@ def create_rand_array(size, low_bound=0, upp_bound=100):
     r = []
     start = timer()
     for i in range(size):
-        r.append(random.randint(low_bound, upp_bound))
+        r.append(random.randint(low_bound, upp_bound+size))
     end = timer()
     print("Temp creazione array (random):", (end-start), "secondi")
     return r

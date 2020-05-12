@@ -1,0 +1,10 @@
+0.9633257919995231
+
+Algoritmo: MergeSort
+Dimensione Input: 20000
+Tempo impiegato ad ordinare: 0.9633257919995231
+Input: Casuale
+Data 23/4/2020
+
+Inizio:: 0:34:53
+Fine:: 0:34:54

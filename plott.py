@@ -49,6 +49,11 @@ def draw_graphic(list_input, tipo_input, algoritmo, name):
             mark = "o"
             mk_face_color = "m"
             label = str(algoritmo)
+        elif algoritmo == "QuickSort":
+            color = "g"
+            mark = "*"
+            mk_face_color = "p"
+            label = str(algoritmo)
 
     plt.plot(list_x, list_y, label=label, color=color, marker=mark, markerfacecolor=mk_face_color)
     plt.legend()
