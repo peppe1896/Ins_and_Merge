@@ -1,0 +1,10 @@
+795.3600513680012
+
+Algoritmo: QuickSort
+Dimensione Input: 100000000
+Tempo impiegato ad ordinare: 795.3600513680012
+Input: Casuale
+Data 26/4/2020
+
+Inizio:: 12:3:9
+Fine:: 12:16:24

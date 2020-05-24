@@ -1,0 +1,10 @@
+41.97695410199958
+
+Algoritmo: MergeSort
+Dimensione Input: 1200000
+Tempo impiegato ad ordinare: 41.97695410199958
+Input: Invertito
+Data 22/4/2020
+
+Inizio:: 17:51:45
+Fine:: 17:52:27

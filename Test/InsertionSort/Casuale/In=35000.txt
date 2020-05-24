@@ -1,0 +1,10 @@
+42.76938222099852
+
+Algoritmo: InsertionSort
+Dimensione Input: 35000
+Tempo impiegato ad ordinare: 42.76938222099852
+Input: Casuale
+Data 23/4/2020
+
+Inizio:: 16:58:44
+Fine:: 16:59:27

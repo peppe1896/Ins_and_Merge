@@ -1,0 +1,10 @@
+0.330969398986781
+
+Algoritmo: QuickSort
+Dimensione Input: 10000
+Tempo impiegato ad ordinare: 0.330969398986781
+Input: Ordinato
+Data 12/5/2020
+
+Inizio:: 16:32:18
+Fine:: 16:32:18
