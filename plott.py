@@ -5,8 +5,8 @@ def create_data_array(list_of_read, tipo, algoritmo):
     final_list = []
     for k in list_of_read:
         nom_file = "In="+str(k)+".txt"
-        file = open("./Test/"+str(tipo)+"/"+str(algoritmo)+"/"+nom_file, "r")
-        final_list.append(float(file.readline(7)))
+        file = open("./Test/"+str(algoritmo)+"/"+str(tipo)+"/"+nom_file, "r")
+        final_list.append(float(file.readline(14)))
         file.close()
     return final_list
 
@@ -43,17 +43,19 @@ def draw_graphic(list_input, tipo_input, algoritmo, name):
             color = "r"
             mark = "d"
             mk_face_color = "c"
-            label = str(algoritmo)
         elif algoritmo == "InsertionSort":
             color = "b"
             mark = "o"
             mk_face_color = "m"
-            label = str(algoritmo)
         elif algoritmo == "QuickSort":
             color = "g"
             mark = "*"
-            mk_face_color = "p"
-            label = str(algoritmo)
+            mk_face_color = "r"
+        elif algoritmo == "RadixSort":
+            color = "c"
+            mark = "."
+            mk_face_color = "r"
+        label = str(algoritmo)
 
     plt.plot(list_x, list_y, label=label, color=color, marker=mark, markerfacecolor=mk_face_color)
     plt.legend()

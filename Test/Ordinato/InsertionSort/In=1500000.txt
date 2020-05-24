@@ -1,6 +1,0 @@
-4.800551956999698
-
-Algoritmo: InsertionSort
-Dimensione Input: 1500000
-Tempo impiegato ad ordinare: 4.800551956999698
-Input: Ordinato
