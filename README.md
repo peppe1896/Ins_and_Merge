@@ -26,24 +26,25 @@ quali si sta simulando. Es: Se voglio aggiungere al plot il risultato della simu
 più precisamente alla fine, dentro la funzione `plot_mode` e in **modo ordinato**, bisogna **aggiungere** anche il valore in **entrambe le liste**,
 essendo quelle le liste che vanno a essere _plottate_.
 
+**NUOVA AGGIUNTA.**
 
 **`AGGIUNGERE ALTRI ALGORITMI/LAVORARE SU QUELLI ESISTENTI`**
 Questo programma è scritto in modo molto basilare da una persona che di esperienza non ne ha. Quindi per chiunque, compreso lui
 stesso, questo programma risulta indecifrabile. Ma in un momento di lucidità, ho deciso di scrivermi 2 righe per il me 
 futuro che vorra aggiungere altri algoritmi o modificare i plot.
 
-**Aggiunta di un algoritmo nuovo:**
+**_Aggiunta di un algoritmo nuovo:_**
 - Crea un file di .py in cui ci metti il codice. Crea anche una funzione semplificata che lanci l'algoritmo.
-- Includi dentro main.py questo file e modifica le seguenti funzioni:
-    - Modifica la funzione "setup": 
-        - Aggiungi nel PRIMO if il nome dell'algoritmo
-    - Modifica la funzione "simulate_n_save":
-        - Nella parte "Simula", che si trova dopo il primo blocco di switch (quello che crea l'input), aggiungi un elif 
+- Includi dentro **main.py** questo file e modifica le seguenti funzioni:
+    - Modifica la funzione `setup`: 
+        - Aggiungi nel _PRIMO_ `if` il nome dell'algoritmo
+    - Modifica la funzione `simulate_n_save`:
+        - Nella parte "**Simula**", che si trova dopo il primo blocco di switch (quello che crea l'input), aggiungi un elif 
         e completalo come gli altri.
-        - Nella parte  "Salva su file" non fare niente, ma crea una cartella in Test/ con il nome dell'algoritmo e 3 
-        sottocartelle "Ordinato" "Invertito" "Ordinato"
-    - Modifica la funzione "plot_mode" aggiungendo, nel caso volessi, altri input oltre a quelli di base, o in generale
+        - Nella parte  "**Salva su file**" non fare niente, ma crea una cartella in _Test/_ con il nome dell'algoritmo e 3 
+        sottocartelle "_Ordinato_" "_Invertito_" "_Ordinato_"
+    - Modifica la funzione `plot_mode` aggiungendo, nel caso volessi, altri input oltre a quelli di base, o in generale
     se avessi bisogno di altre info particolari per l'algoritmo in questione
-- Ora vai su "plott.py":
-    - Modifica la funzione "draw_graphic" aggiungendo nell'else il nome dell'algoritmo nuovo e impostando 
+- Ora vai su **plott.py**:
+    - Modifica la funzione `draw_graphic` aggiungendo nell'else il nome dell'algoritmo nuovo e impostando 
     colori e marker
