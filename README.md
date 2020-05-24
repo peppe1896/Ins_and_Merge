@@ -13,9 +13,9 @@ Nella cartella "_Test_" sono invece salvati i risultati dei vari test eseguiti, 
     - `1`: Ordinamento Invertito
     - `2`: Ordinamento Ordinato
     - `3`: Grafico di tutti e 3 tipi di ordinamento
-    - `4`: Compara Casuale di MSort con ISort
-    - `5`: Compara Invertito di MSort con ISort
-    - `6`: Compara Ordinato di MSort con ISort
+    - `4`: Compara Casuale di _algoritmo1_ con _algoritmo2_
+    - `5`: Compara Invertito di _algoritmo1_ con _algoritmo2_
+    - `6`: Compara Ordinato di _algoritmo1_ con _algoritmo2_
     
     E' da far notare che `3` `4` `5` `6` valgono solamente per il plot. `0` `1` e `2` valgono per entrambi.
 
