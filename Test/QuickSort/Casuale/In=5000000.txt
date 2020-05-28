@@ -1,10 +1,10 @@
-29.234771011000703
+34.66383653599951
 
 Algoritmo: QuickSort
 Dimensione Input: 5000000
-Tempo impiegato ad ordinare: 29.234771011000703
+Tempo impiegato ad ordinare: 34.66383653599951
 Input: Casuale
-Data 26/4/2020
+Data 27/5/2020
 
-Inizio:: 11:56:48
-Fine:: 11:57:17
+Inizio:: 11:55:49
+Fine:: 11:56:24

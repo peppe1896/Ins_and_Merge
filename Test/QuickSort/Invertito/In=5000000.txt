@@ -1,10 +1,10 @@
-33.266414905010606
+34.12296853799853
 
 Algoritmo: QuickSort
 Dimensione Input: 5000000
-Tempo impiegato ad ordinare: 33.266414905010606
+Tempo impiegato ad ordinare: 34.12296853799853
 Input: Invertito
-Data 12/5/2020
+Data 27/5/2020
 
-Inizio:: 2:12:32
-Fine:: 2:13:5
+Inizio:: 11:54:46
+Fine:: 11:55:20

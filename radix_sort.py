@@ -1,5 +1,4 @@
-def counting_sort(array, place):
-    size = len(array)
+def counting_sort(array, place, size):
     output = [0] * size
     count = [0] * 10
     for i in range(0, size):
@@ -21,12 +20,9 @@ def counting_sort(array, place):
 
 
 def radix_sort(array):
-    # Get maximum element
     max_element = max(array)
-
-    # Apply counting sort to sort elements based on place value.
     place = 1
+    size = len(array)
     while max_element // place > 0:
-        # print("RAD", max_element // place)
-        counting_sort(array, place)
+        counting_sort(array, place, size)
         place *= 10
