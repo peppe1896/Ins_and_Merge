@@ -43,7 +43,7 @@ def check_correctness(array):
     i = 0
     j = 1
     while i < len(array) - 1:
-        if abs(array[j]) < abs(array[i]):
+        if array[j] < array[i]:
             return False
         i += 1
         j += 1
@@ -87,21 +87,25 @@ def simulate_n_save(dim_array=10, switch=0, algorithm="MergeSort"):
     print("Il risultato sarà salvato in: ./Test/" + algoritmo + "/" + tipo_input + "/ e il file si chiama In="
           + str(dim_array) + ".txt")
     print(str_start)
-    start = timer()
     if algoritmo == "InsertionSort":
         print("Uso InsertionSort::", end=" ")
+        start = timer()
         array = isort.insertion_sort(array)
     elif algoritmo == "MergeSort":
         print("Uso MergeSort::", end=" ")
+        start = timer()
         msort.MergeSort(array)
     elif algoritmo == "QuickSort":
         print("Uso QuickSort::", end=" ")
+        start = timer()
         qsort.call_quicksort(array)
     elif algoritmo == "RadixSort":
         print("Uso RadixSort::", end=" ")
+        start = timer()
         rsort.radix_sort(array)
     else:
         print("DEFAULT CASE: MergeSort -- ARRAY: RANDOM", end=" ")
+        start = timer()
         msort.MergeSort(array)
     stop = timer()
     delta = stop - start
@@ -170,4 +174,11 @@ def plot_mode(tipo_input, algoritmo, full, name=""):
             lista_input.append(12000000)
             lista_input.append(25000000)
             lista_input.append(50000000)
+    elif full and algoritmo == "RadixSort":
+        lista_input.append(500000)
+        lista_input.append(1200000)
+        lista_input.append(5000000)
+        lista_input.append(12500000)
+        lista_input.append(25000000)
+        lista_input.append(50000000)
     plt.draw_graphic(lista_input, tipo_input, algoritmo, name)

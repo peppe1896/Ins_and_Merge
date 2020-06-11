@@ -10,8 +10,17 @@ def get_sentinel(array):
 
 
 def merge(arr, p, q, r, sentinel):
-    L = arr[p:q+1]
-    R = arr[q+1:r + 1]
+    L = []
+    R = []
+    k = p
+    while k < q+1:
+        L.append(arr[k])
+        k += 1
+    # L = arr[p:q+1]
+    while k < r+1:
+        R.append(arr[k])
+        k += 1
+    # R = arr[q+1:r + 1]
     L.append(sentinel)
     R.append(sentinel)
     i = j = 0

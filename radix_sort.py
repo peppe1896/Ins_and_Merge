@@ -1,28 +1,31 @@
-def counting_sort(array, place, size):
-    output = [0] * size
-    count = [0] * 10
+import numpy as np
+
+
+def counting_sort(A, B, place, size):
+    C = np.zeros(10, dtype=int)
     for i in range(0, size):
-        index = array[i] // place
-        count[index % 10] += 1
+        index = A[i] // place
+        C[index % 10] += 1
 
     for i in range(1, 10):
-        count[i] += count[i - 1]
+        C[i] += C[i - 1]
 
-    i = size - 1
     while i >= 0:
-        index = array[i] // place
-        output[count[index % 10] - 1] = array[i]
-        count[index % 10] -= 1
+        index = A[i] // place
+        B[C[index % 10] - 1] = A[i]
+        C[index % 10] -= 1
         i -= 1
 
     for i in range(0, size):
-        array[i] = output[i]
+        A[i] = B[i]
+        B[i] = 0
 
 
-def radix_sort(array):
-    max_element = max(array)
+def radix_sort(A):
+    max_element = max(A)
     place = 1
-    size = len(array)
+    size = len(A)
+    B = np.zeros(size, dtype=int)
     while max_element // place > 0:
-        counting_sort(array, place, size)
+        counting_sort(A, B, place, size)
         place *= 10

@@ -1,10 +1,10 @@
-0.09829938897746615
+7.394284943991806
 
 Algoritmo: RadixSort
 Dimensione Input: 5000000
-Tempo impiegato ad ordinare: 0.09829938897746615
+Tempo impiegato ad ordinare: 7.394284943991806
 Input: Invertito
-Data 23/5/2020
+Data 31/5/2020
 
-Inizio:: 17:37:32
-Fine:: 17:37:32
+Inizio:: 18:53:26
+Fine:: 18:53:33

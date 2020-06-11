@@ -1,0 +1,10 @@
+2800128
+
+Algoritmo: InsertionSort
+Dimensione Input: 350000
+Tempo impiegato ad ordinare: 0.18459319100657012
+Input: Ordinato
+Data 11/6/2020
+
+Inizio:: 15:48:28
+Fine:: 15:48:28

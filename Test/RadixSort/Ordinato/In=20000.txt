@@ -1,10 +1,10 @@
-0.04701328297960572
+0.13003612899046857
 
 Algoritmo: RadixSort
 Dimensione Input: 20000
-Tempo impiegato ad ordinare: 0.04701328297960572
+Tempo impiegato ad ordinare: 0.13003612899046857
 Input: Ordinato
-Data 24/5/2020
+Data 11/6/2020
 
-Inizio:: 11:35:9
-Fine:: 11:35:9
+Inizio:: 12:32:18
+Fine:: 12:32:18

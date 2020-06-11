@@ -1,0 +1,11 @@
+160304
+Peso array input: 160096
+
+Algoritmo: RadixSort
+Dimensione Input: 20000
+Tempo impiegato ad ordinare: 0.14432710899563972
+Input: Ordinato
+Data 11/6/2020
+
+Inizio:: 16:15:0
+Fine:: 16:15:0
