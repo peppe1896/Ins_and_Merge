@@ -1,10 +1,10 @@
-0.19054233698989265
+0.1748801110002205
 
 Algoritmo: InsertionSort
 Dimensione Input: 50000
-Tempo impiegato ad ordinare: 0.19054233698989265
+Tempo impiegato ad ordinare: 0.1748801110002205
 Input: Ordinato
-Data 1/6/2020
+Data 22/6/2020
 
-Inizio:: 1:45:36
-Fine:: 1:45:36
+Inizio:: 14:2:15
+Fine:: 14:2:15

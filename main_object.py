@@ -16,7 +16,6 @@ def setup(simul, dim, switch, algoritmo, algoritmo2):
         else:
             print("ERROR: invalid switch! Use 0, 1 or 2 for simulation.")
     else:
-        # plot_mode(switch, algoritmo, "~~~")
         if switch == 3:  # Tutti i grafici dello stesso algoritmo
             k = 0
             while k < 3:
@@ -32,7 +31,7 @@ def setup(simul, dim, switch, algoritmo, algoritmo2):
             plot_mode(2, algoritmo, name=str(algoritmo) + "<->" + str(algoritmo2))
             plot_mode(2, algoritmo2, name=str(algoritmo) + "<->" + str(algoritmo2))
         else:
-            plot_mode(switch, algoritmo, name="~")  # Stampa solo il grafico per l'input corrente.
+            plot_mode(switch, algoritmo, name=str(algoritmo))  # Stampa solo il grafico per l'input corrente.
         plot.print_plot()
 
 

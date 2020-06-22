@@ -2,14 +2,14 @@ import main
 import main_object as mo
 
 # SETUP
-simulation_mode = True  # IF FALSE: PLOT MODE
-switch = 0  # 0=Casuale 1=Invertito 2=Ordinato | 3=Tutti i plot dello stesso algoritmo
+simulation_mode = False  # IF FALSE: PLOT MODE
+switch = 4  # 0=Casuale 1=Invertito 2=Ordinato | 3=Tutti i plot dello stesso algoritmo
 #           # 4-5-6 compara i due algoritmi in: RAND-INV-ORD
-algoritmo = "InsertionSort"  # InsertionSort | MergeSort | QuickSort | RadixSort
-dim_array = 10000
+algoritmo = "RadixSort"  # InsertionSort | MergeSort | QuickSort | RadixSort
+dim_array = 500000
 full = False  # Aggiungi valori di input
 alg_da_comparare = "InsertionSort"  # Un secondo algoritmo da comparare con il primo algoritmo
-is_obj = False  # Se vuoi usare le funzioni per ottenere la memoria consumata, e i grafici
+is_obj = True  # Se vuoi usare le funzioni per ottenere la memoria consumata, e i grafici
 
 
 def super_main_func():
