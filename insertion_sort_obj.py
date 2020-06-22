@@ -7,6 +7,7 @@ class insertionsort(object):
 
     def insertion_sort(self, A):
         self.A = A
+        len_a = len(A)
         for j in range(1, len(self.A)):
             key = self.A[j]
             i = j - 1
@@ -14,6 +15,8 @@ class insertionsort(object):
                 self.A[i + 1] = self.A[i]
                 i -= 1
             self.A[i + 1] = key
+            print("\rInput " + str(j + 1) + " on " + str(len_a), end="")
+        print("\n")
 
     def getsize(self):
         string = str(int(self.__sizeof__()))

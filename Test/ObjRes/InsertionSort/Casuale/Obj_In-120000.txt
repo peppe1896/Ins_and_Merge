@@ -1,0 +1,11 @@
+32
+Peso array: 960096
+
+Algoritmo: InsertionSort
+Dimensione Input: 120000
+Tempo impiegato ad ordinare: 1711.4785820600082
+Input: Casuale
+Data 11/6/2020
+
+Inizio:: 17:28:21
+Fine:: 17:56:53

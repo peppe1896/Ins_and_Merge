@@ -28,7 +28,7 @@ def create_inverted_array(size):
     start = timer()
     i = size - 1
     while i >= 0:
-        u[i] = (int(i))
+        u[i] = size - (int(i))
         i -= 1
     end = timer()
     print("Temp creazione array (invertito):", (end-start))

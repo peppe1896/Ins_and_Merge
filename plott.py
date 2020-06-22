@@ -62,8 +62,10 @@ def draw_graphic(list_input, tipo_input, algoritmo, name, object=False):
             mk_face_color = "r"
         label = str(algoritmo)
     if object:
-        plt.xlabel("Memoria occupata (bytes)")
+        plt.xlabel("Memoria occupata (KB)")
         plt.ylabel("Input (num elementi)", labelpad=-5)
+        for i in range(0, len(list_y)):
+            list_y[i] /= 1024
         plt.plot(list_y, list_x, label=label, color=color, marker=mark, markerfacecolor=mk_face_color)
     else:
         plt.xlabel("Input (num elementi)")

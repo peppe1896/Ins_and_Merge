@@ -20,7 +20,7 @@ def setup(simul, dim, switch, algoritmo, algoritmo2):
         if switch == 3:  # Tutti i grafici dello stesso algoritmo
             k = 0
             while k < 3:
-                plot_mode(k, algoritmo, name="~")
+                plot_mode(k, algoritmo, name="")
                 k += 1
         elif switch == 4:  # Compara 2 algoritmi su input CASUALE
             plot_mode(0, algoritmo, name=str(algoritmo) + "<->" + str(algoritmo2))
@@ -111,5 +111,4 @@ def plot_mode(tipo_input, algoritmo, name):
     else:
         print("DEFAULT INPUT TYPE: Random")
         tipo_input = "Casuale"
-
     plot.draw_graphic(lista_input, tipo_input, algoritmo, name, object=True)
